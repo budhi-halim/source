@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* || RESET */
+* {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+img {
+    display: block;
+}
+
+/* || VARIABLES */
+:root {
+    /* GENERAL STYLE */
+    --MAIN-PADDING: 5vw;
+    
+    /* COLOR */
+    --MAIN-COLOR: hsla(18, 94%, 86%, 0.4);
+    --HEADER-COLOR: #FDCFBB;
+    --DARK-COLOR: hsl(18, 18%, 36%);
+    --LIGHT-COLOR: rgb(252, 241, 236);
+    --TABLE-HEADER-COLOR: rgb(253, 223, 209);
+    --TABLE-ROW-COLOR: rgba(253, 223, 209, 0.5);
+    --SHADOW: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    
+    /* FONT */
+    --FONT-SIZE: 1.5rem;
+    --FONT-SIZE-SMALL: clamp(0.625rem, 1.5vmax, 0.75rem);
+    --FONT-COLOR: var(--DARK-COLOR);
+    --ICON-FONT-COLOR: hwb(17 93% 0%);
+
+    /* HEADER */
+    --LOGO-WIDTH: max(96px, 20vmin);
+    --HEADER-PADDING: min(5vw, 0.75rem);
+}
+
+/* || GENERAL STYLING */
+html {
+    color: var(--FONT-COLOR);
+    font-family: "Josefin Sans", monospace, sans-serif;
+    font-size: var(--FONT-SIZE);
+    font-weight: 300;
+}
+
+body {
+    background-color: var(--MAIN-COLOR);
+}
+
+header {
+    align-items: center;
+    background-color: var(--HEADER-COLOR);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--HEADER-PADDING) var(--HEADER-PADDING) 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    height: auto;
+    width: var(--LOGO-WIDTH);
+}
+
+.search-container {
+    background-color: var(--HEADER-COLOR);
+    box-shadow: 0 2px 2px var(--DARK-COLOR);
+    padding: var(--HEADER-PADDING);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.search-bar {
+    background-color: var(--LIGHT-COLOR);
+    background-image: url('https://raw.githubusercontent.com/budhi-halim/source/master/img/search.png');
+    background-position-x: calc(var(--FONT-SIZE) / 3);
+    background-position-y: calc(var(--FONT-SIZE) / 5);
+    background-repeat: no-repeat;
+    background-size: calc(var(--FONT-SIZE) / 2);
+    border-radius: var(--FONT-SIZE);
+    border: none;
+    box-shadow: var(--SHADOW);
+    font-family: inherit;
+    outline: none;
+    padding: calc(var(--FONT-SIZE) / 4) calc(var(--FONT-SIZE) / 4) calc(var(--FONT-SIZE) / 4) calc(var(--FONT-SIZE) / 1);
+    width: min(100%, 500px);
+}
+
+main {
+    line-height: 1.25;
+    padding: 0 var(--MAIN-PADDING);
+}
+
+.order-details {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.order-details-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    -ms-overflow-style: none;
+    border-bottom: 1px solid var(--DARK-COLOR);
+    display: block;
+    max-height: 80vh;
+    max-width: 90vw;
+    overflow: auto;
+    scrollbar-width: none;
+    width: fit-content;
+}
+
+table::-webkit-scrollbar {
+    display: none;
+}
+
+.caption {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 2;
+    text-align: left;
+}
+
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#ingredient-details-head th {
+    top: var(--FONT-SIZE);
+}
+
+th, td {
+    padding: calc(var(--FONT-SIZE-SMALL) / 4) var(--FONT-SIZE-SMALL) 0;
+}
+
+thead th,
+tfoot,
+tfoot th {
+    background-color: var(--TABLE-HEADER-COLOR);
+    font-weight: 400;
+}
+
+#ingredient-details-body tr td:last-child {
+    font-weight: 400;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--TABLE-ROW-COLOR);
+}
+
+.counter {
+    display: flex;
+    margin: calc(var(--FONT-SIZE-SMALL) / 4);
+    place-content: center;
+}
+
+.btn {
+    background-color: transparent;
+    background-color: var(--LIGHT-COLOR);
+    border-radius: calc(var(--FONT-SIZE) / 2);
+    border: none;
+    border: none;
+    box-shadow: var(--SHADOW);
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    height: var(--FONT-SIZE);
+    margin-bottom: calc(var(--FONT-SIZE-SMALL) / 2);
+    outline: none;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    width: var(--FONT-SIZE);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+        filter: brightness(95%);
+        transition-duration: 250ms;
+        transition-timing-function: ease;
+    }
+}
+
+.btn:active {
+    filter: brightness(90%);
+    transform: translateY(1px);
+    transition-duration: 50ms;
+}
+
+.input-number {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: default;
+    font: inherit;
+    height: var(--FONT-SIZE);
+    margin-top: calc(var(--FONT-SIZE-SMALL) / 4);
+    outline: none;
+    text-align: center;
+    width: 4ch;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.calc,
+.download,
+.clear {
+    padding-bottom: 0;
+    padding: calc(var(--FONT-SIZE-SMALL) / 4);
+    width: 10ch;
+}

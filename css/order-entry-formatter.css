@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* || RESET */
+* {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+img {
+    display: block;
+}
+
+/* || VARIABLES */
+:root {
+    /* GENERAL STYLE */
+    --MAIN-PADDING: 5vw;
+    
+    /* COLOR */
+    --MAIN-COLOR: hsla(18, 94%, 86%, 0.4);
+    --HEADER-COLOR: #FDCFBB;
+    --DARK-COLOR: hsl(18, 18%, 36%);
+    --LIGHT-COLOR: rgb(252, 241, 236);
+    --TABLE-HEADER-COLOR: rgb(253, 223, 209);
+    --TABLE-ROW-COLOR: rgba(253, 223, 209, 0.5);
+    --SHADOW: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    
+    /* FONT */
+    --FONT-SIZE: 1.5rem;
+    --FONT-SIZE-SMALL: clamp(0.625rem, 1.5vmax, 0.75rem);
+    --FONT-COLOR: var(--DARK-COLOR);
+    --ICON-FONT-COLOR: hwb(17 93% 0%);
+
+    /* HEADER */
+    --LOGO-WIDTH: max(96px, 20vmin);
+    --HEADER-PADDING: min(5vw, 0.75rem);
+}
+
+/* || GENERAL STYLING */
+html {
+    color: var(--FONT-COLOR);
+    font-family: "Josefin Sans", monospace, sans-serif;
+    font-size: var(--FONT-SIZE);
+    font-weight: 300;
+}
+
+body {
+    background-color: var(--MAIN-COLOR);
+}
+
+header {
+    align-items: center;
+    background-color: var(--HEADER-COLOR);
+    box-shadow: 0 2px 2px var(--DARK-COLOR);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--HEADER-PADDING);
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    height: auto;
+    width: var(--LOGO-WIDTH);
+}
+
+main {
+    line-height: 1.5;
+    padding: var(--MAIN-PADDING);
+}
+
+input {
+    font: inherit;
+}
+
+.drop-area {
+    align-items: center;
+    background-color: var(--LIGHT-COLOR);
+    border-radius: 20px;
+    border: 2px dashed var(--DARK-COLOR);
+    cursor: pointer;
+    display: flex;
+    font-size: 75px;
+    height: 100px;
+    justify-content: center;
+    width: 100px;
+}
+
+.drop-area-highlight {
+    filter: brightness(95%);
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+}
+
+.drop-area-file-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+input[type=date],
+input::file-selector-button,
+#submit {
+    background-color: transparent;
+    background-color: var(--LIGHT-COLOR);
+    border-radius: calc(var(--FONT-SIZE) / 2);
+    border: none;
+    box-shadow: var(--SHADOW);
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    height: var(--FONT-SIZE);
+    margin-bottom: calc(var(--FONT-SIZE-SMALL) / 2);
+    outline: none;
+    padding:  calc(var(--FONT-SIZE) / 20) calc(var(--FONT-SIZE) / 2);
+    text-align: center;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover,
+    .drop-area:hover {
+        filter: brightness(95%);
+        transition-duration: 250ms;
+        transition-timing-function: ease;
+    }
+}
+
+.btn:active {
+    filter: brightness(90%);
+    transform: translateY(1px);
+    transition-duration: 50ms;
+}
